@@ -48,9 +48,12 @@ export default function UserListScreen(props) {
         <table className="table" id="userListTable">
           <thead>
             <tr>
-              <th>ID-usuario en mongodb</th>
-              <th>Nombre de Usuario</th>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Cedula</th>
               <th>Email registrado</th>
+              <th>Es Vendedor?</th>
               <th>Es Admin?</th>
               <th>Acciones</th>
             </tr>
@@ -58,10 +61,14 @@ export default function UserListScreen(props) {
           <tbody>
             {users.map((user) => (
               <tr key={user._id}>
-                <td>{user._id}</td>
+                <td>{user.codigo}</td>
                 <td>{user.name}</td>
+                <td>{user.apellido}</td>
+                <td>{user.cedula}</td>
                 <td>{user.email}</td>
+                <td>{user.isSeller ? 'SI' : 'NO'}</td>
                 <td>{user.isAdmin ? 'SI' : 'NO'}</td>
+
                 <td>
                   <button
                     type="button"

@@ -9,7 +9,7 @@ import { isAdmin, isAuth } from '../utils.js';
 const productRouter = express.Router();
 
 productRouter.get('/', expressAsyncHandler(async (req, res) => {
-  const pageSize = 10;
+  const pageSize = 12;
   const page = Number(req.query.pageNumber) || 1;
   const nombre = req.query.nombre || '';
   const nombreFilter = nombre ? { nombre: { $regex: nombre, $options: 'i' } } : {};

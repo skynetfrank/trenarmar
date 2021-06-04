@@ -69,9 +69,10 @@ export default function CartScreen(props) {
         <div className="card card-body">
           <ul>
             <li>
-            <h1 className="grueso">Resumen</h1>
-              <p><strong>Total a Pagar:   ${cartItems.reduce((a, c) => a + c.precio * c.qty, 0).toFixed(2)}</strong></p>
+            <h1 className="grueso">Pedido - Resumen</h1>
               <p><strong> Cantidad de articulos: ({cartItems.reduce((a, c) => a + c.qty, 0)})</strong></p>
+              <p><strong>Total a Pagar:   ${cartItems.reduce((a, c) => a + c.precio * c.qty, 0).toFixed(2)}</strong></p>
+            
             </li>
             <li>
               <button type="button"

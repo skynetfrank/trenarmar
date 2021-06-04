@@ -8,6 +8,9 @@ import MessageBox from '../components/MessageBox';
 export default function RegisterScreen(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [cedula, setCedula] = useState('');
+  const [codigo, setCodigo] = useState('');
   const [password, setPassword] = useState('');
   const [confirPassword, setConfirmPassword] = useState('');
 
@@ -21,7 +24,7 @@ export default function RegisterScreen(props) {
     if (password !== confirPassword) {
       alert("La clave de confirmacion no coincide!... verifica")
     } else {
-      dispatch(register(name, email, password));
+      dispatch(register(name, apellido, cedula, codigo, email, password));
     }
   }
 
@@ -40,12 +43,39 @@ export default function RegisterScreen(props) {
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
+          <label htmlFor="name">Codigo</label>
+          <input
+            type="text" id="codigo"
+            required
+            placeholder="codigo asignado"
+            onChange={e => setCodigo(e.target.value)}>
+          </input>
+        </div>
+        <div>
           <label htmlFor="name">Nombre</label>
           <input
             type="text" id="name"
             required
-            placeholder="escribe tu nombre de usuario"
+            placeholder="escribe tu nombre"
             onChange={e => setName(e.target.value)}>
+          </input>
+        </div>
+        <div>
+          <label htmlFor="apellido">Apellido</label>
+          <input
+            type="text" id="apellido"
+            required
+            placeholder="escribe tu apellido"
+            onChange={e => setApellido(e.target.value)}>
+          </input>
+        </div>
+        <div>
+          <label htmlFor="cedula">Cedula</label>
+          <input
+            type="text" id="cedula"
+            required
+            placeholder="escribe tu cedula"
+            onChange={e => setCedula(e.target.value)}>
           </input>
         </div>
         <div>

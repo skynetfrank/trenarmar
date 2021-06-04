@@ -34,7 +34,7 @@ function HomeScreen() {
               <input type="text"
                 value={busqueda}
                 className="search-input"
-                placeholder="buscar"
+                placeholder="buscar producto"
                 onChange={(e) => setBusqueda(e.target.value)}
               >
               </input>

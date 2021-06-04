@@ -8,6 +8,9 @@ import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
 
 export default function ProfileScreen() {
   const [name, setName] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [cedula, setCedula] = useState('');
+  const [codigo, setCodigo] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -33,6 +36,9 @@ export default function ProfileScreen() {
     } else {
       setName(user.name);
       setEmail(user.email);
+      setApellido(user.apellido);
+      setCedula(user.cedula);
+      setCodigo(user.codigo);
       if (user.seller) {
         setSellerName(user.seller.name);
         setSellerLogo(user.seller.logo);
@@ -51,6 +57,9 @@ export default function ProfileScreen() {
           userId: user._id,
           name,
           email,
+          apellido,
+          cedula,
+          codigo,
           password,
           sellerName,
           sellerLogo,
@@ -81,6 +90,16 @@ export default function ProfileScreen() {
               </MessageBox>
             )}
             <div>
+              <label htmlFor="codigo">Codigo</label>
+              <input
+                id="codigoUsuario"
+                type="text"
+                placeholder="Codigo asignado"
+                value={codigo}
+                onChange={(e) => setName(e.target.value)}
+              ></input>
+            </div>
+            <div>
               <label htmlFor="name">Nombre</label>
               <input
                 id="name"
@@ -90,6 +109,26 @@ export default function ProfileScreen() {
                 onChange={(e) => setName(e.target.value)}
               ></input>
             </div>
+                <div>
+                  <label htmlFor="apellido">Apellido</label>
+                  <input
+                    id="apellido"
+                    type="text"
+                    placeholder="Introduce tu apellido"
+                    value={apellido}
+                    onChange={(e) => setEmail(e.target.value)}
+                  ></input>
+                </div>
+                <div>
+                  <label htmlFor="cedula">Cedula</label>
+                  <input
+                    id="cedula"
+                    type="text"
+                    placeholder="Introduce tu cedula"
+                    value={cedula}
+                    onChange={(e) => setEmail(e.target.value)}
+                  ></input>
+                </div>
             <div>
               <label htmlFor="email">Email</label>
               <input
@@ -100,6 +139,7 @@ export default function ProfileScreen() {
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
+           
             <div>
               <label htmlFor="password">Password</label>
               <input
@@ -118,42 +158,7 @@ export default function ProfileScreen() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
             </div>
-            {user.isSeller && (
-              <>
-                <h2>Vendedor</h2>
-                <div>
-                  <label htmlFor="sellerName">Nombre del Vendedor</label>
-                  <input
-                    id="sellerName"
-                    type="text"
-                    placeholder="Enter Seller Name"
-                    value={sellerName}
-                    onChange={(e) => setSellerName(e.target.value)}
-                  ></input>
-                </div>
-                <div>
-                  <label htmlFor="sellerLogo">Logo de Vendedor</label>
-                  <input
-                    id="sellerLogo"
-                    type="text"
-                    placeholder="Enter Seller Logo"
-                    value={sellerLogo}
-                    onChange={(e) => setSellerLogo(e.target.value)}
-                  ></input>
-                </div>
-                <div>
-                  <label htmlFor="sellerDescription">Descripcion del Vendedor</label>
-                  <input
-                    id="sellerDescription"
-                    type="text"
-                    placeholder="Enter Seller Description"
-                    value={sellerDescription}
-                    onChange={(e) => setSellerDescription(e.target.value)}
-                  ></input>
-                </div>
-              </>
-            )}
-            <div>
+                        <div>
               <label />
               <button className="primary" type="submit">
                 Actualizar

@@ -41,8 +41,12 @@ userRouter.post('/register', expressAsyncHandler(async (req, res) => {
   const user = new User({
     name: req.body.name,
     email: req.body.email,
+    apellido: req.body.apellido,
+    cedula: req.body.cedula,
+    codigo: req.body.codigo,
     password: bcrypt.hashSync(req.body.password, 8),
   });
+  console.log("User:",user);
   const createdUser = await user.save();
   res.send({
     _id: createdUser._id,
@@ -69,6 +73,11 @@ userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
+    user.apellido = req.body.email || user.apellido;
+    user.cedula = req.body.cedula || user.cedula;
+    user.codigo = req.body.codigo || user.codigo;
+
+
     if (user.isSeller) {
       user.seller.name = req.body.sellerName || user.seller.name;
       user.seller.logo = req.body.sellerLogo || user.seller.logo;
@@ -83,6 +92,9 @@ userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
       _id: updatedUser._id,
       name: updatedUser.name,
       email: updatedUser.email,
+      apellido: updatedUser.apellido,
+      cedula: updatedUser.cedula,
+      codigo: updatedUser.codigo,
       isAdmin: updatedUser.isAdmin,
       isSeller: user.isSeller,
       token: generateToken(updatedUser),

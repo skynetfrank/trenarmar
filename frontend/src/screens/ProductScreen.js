@@ -35,9 +35,7 @@ function ProductScreen(props) {
                   <li>
                     <h1>{producto.nombre}</h1>
                   </li>
-                  <li>
-                    <Rating rating={producto.rating} numReviews={producto.numReviews}></Rating>
-                  </li>
+
                   <li>
                     <strong>Precio:</strong> ${producto.precio.toFixed(2)}
                   </li>
@@ -63,10 +61,10 @@ function ProductScreen(props) {
                     </li>
                     <li>
                       <div className="row">
-                        <div>Status</div>
+                       
                         <div>
                           {producto.countInStock > 0 ?
-                            (<span className="success">Disponible</span>)
+                            (<span className="success">Disponibles: {producto.countInStock} unidades</span>)
                             : (<span className="error">NO disponible</span>)
                           }</div>
                       </div>

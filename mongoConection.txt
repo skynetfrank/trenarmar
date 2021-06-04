@@ -1,0 +1,10 @@
+CRVvj8Fb9Jdy4Q5x
+CRVvj8Fb9Jdy4Q5x
+
+usuario: admin
+
+mongodb+srv://admin:<CRVvj8Fb9Jdy4Q5x>@cluster0.jdhyx.mongodb.net/pedidosdb?retryWrites=true&w=majority
+
+
+AMAZONIA-ANTERIOR CONEXION
+MONGODB_URI=mongodb+srv://admin-amazonia:ompitq01@cluster0.mcndq.mongodb.net/amazonia?retryWrites=true&w=majority&ssl=true

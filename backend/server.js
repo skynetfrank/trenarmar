@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = process.env.PORT || 5000;
 const mongodb_local = 'mongodb://localhost/amazonia';
 const mongodb_compose = 'mongodb://mongo/amazonia'
-const mongodb_cloud = process.env.MONGODB_URI || 'mongodb://localhost/amazonia';
+const mongodb_cloud = process.env.MONGODB_URI;
 
 //process.env.MONGODB_URI || 'mongodb://localhost/amazonia'
 mongoose.connect(mongodb_cloud, {

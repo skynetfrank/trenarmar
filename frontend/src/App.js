@@ -56,10 +56,10 @@ function App() {
       <div className="grid-container">
         <header className="row">
           <div>
-            <Link className="brand" to="/">Amazonia</Link>
+            <Link className="brand" to="/">TRENARMAR 2014</Link>
           </div>
           <div className="header-menu">
-            <Link to="/"><i className="fa fa-cubes"></i> Productos</Link>
+            <Link to="/"><i className="fa fa-cubes"></i><span className="span-hide"> Productos</span></Link>
             <Link to="/cart"><i className="fa fa-shopping-cart"></i> <span className="carrito-hide">Carrito{cartItems.length > 0
               && (<span className="badge">{cartItems.length}</span>)}</span></Link>
             {
@@ -79,10 +79,10 @@ function App() {
                   </ul>
                 </div>)
                 :
-                (<Link to="/signin"><i className="fa fa-user"></i> Mi cuenta</Link>)
+                (<Link to="/signin"><i className="fa fa-user"></i><span className="span-hide"> Mi cuenta</span></Link>)
             }
             {userInfo && userInfo.isAdmin && (
-              <Link to="/dashboard"><i className="fa fa-cogs"></i> Dashboard</Link>
+              <Link to="/dashboard"><i className="fa fa-cogs"></i><span className="span-hide"> Admin</span></Link>
             )}
             <Link to="/Contacto"><i className="fa fa-envelope"></i> <span className="contacto-hide">Contacto</span></Link>
           </div>
