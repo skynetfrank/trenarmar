@@ -27,28 +27,33 @@ function ProductScreen(props) {
           :
           (<div>
             <div className="row top">
-              <div className="col-1 top">
+              <div className="col-1 top imagen">
                 <img className="large" src={producto.imagen} alt={producto.imagen} />
               </div>
               <div className="col-1 top">
                 <ul>
                   <li>
-                    <h1>{producto.nombre}</h1>
-                  </li>
-
-                  <li>
-                    <strong>Precio:</strong> ${producto.precio.toFixed(2)}
+                    <h1 id="titulo-nombre">{producto.nombre}</h1>
                   </li>
                   <li>
-                    <strong>Descripcion:</strong>
-                    <p>
-                      {producto.descripcion}
-                    </p>
+                    <strong>Precio:</strong> ${producto.precio.toFixed(2)} por {producto.presentacion}
+                  </li>
+                  <li>
+                    <strong>Descripcion:</strong>{producto.descripcion}
+                   
+                  </li>
+                  <li>
+                    <div>
+                      {producto.countInStock > 0 ?
+                        (<span className="success">Disponibles: {producto.countInStock} unidades</span>)
+                        : (<span className="error">NO disponible</span>)
+                      }
+                    </div>
                   </li>
                 </ul>
               </div>
               <div className="col-1 top">
-                <div className="card card-body">
+                <div className="card card-body small">
                   <ul>
                     <li>
                       <h1 className="grueso">Producto</h1>
@@ -59,22 +64,13 @@ function ProductScreen(props) {
                         <div className="price">${producto.precio.toFixed(2)}</div>
                       </div>
                     </li>
-                    <li>
-                      <div className="row">
-                       
-                        <div>
-                          {producto.countInStock > 0 ?
-                            (<span className="success">Disponibles: {producto.countInStock} unidades</span>)
-                            : (<span className="error">NO disponible</span>)
-                          }</div>
-                      </div>
-                    </li>
+
                     {
                       producto.countInStock > 0 && (
                         <>
                           <li>
                             <div className="row">
-                              <div>Cantidad</div>
+                              <div>Cantidad a Comprar</div>
                               <div>
                                 <select value={qty} onChange={e => setQty(e.target.value)}>
                                   {
@@ -87,7 +83,7 @@ function ProductScreen(props) {
                             </div>
                           </li>
                           <li>
-                            <button className="primary block"
+                            <button className="primary block top tall"
                               onClick={addToCartHandler}>Agregar al Carrito
                               <i className="fa fa-cart-plus fa-lg"></i></button>
                           </li>

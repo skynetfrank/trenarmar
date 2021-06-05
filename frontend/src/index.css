@@ -71,6 +71,10 @@ h1.grueso {
   font-weight: 800;
 }
 
+#titulo-nombre {
+  text-align: left;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -84,6 +88,10 @@ ul {
 
 li {
   margin-top: 1rem;
+}
+
+.li-divisorio{
+  border-bottom: 2px solid #cccbcb;
 }
 
 input,
@@ -103,7 +111,9 @@ select option {
 }
 
 select {
-  width: 4rem;
+  width: 5rem;
+  height: 3rem;
+  border: 3px solid;
   border-color: #20a020;
   outline: none;
 }
@@ -153,6 +163,15 @@ button.circle {
 button.dash {
   flex: 1;
   min-height: 8rem;
+}
+
+button.top {
+  margin-top: 15px;
+}
+
+button.tall {
+  min-height: 50px;
+  font-size: 20px;
 }
 
 input:hover,
@@ -245,6 +264,14 @@ header a:hover {
   padding: 0 2rem 0 2rem;
 }
 
+.col-1.nopadding {
+  padding: 0;
+}
+
+.col-1.imagen {
+  flex: 1 1 20rem;
+}
+
 .col-2 {
   flex: 2 1 50rem;
   padding: 0 2rem 0 2rem;
@@ -252,6 +279,7 @@ header a:hover {
 
 .min-30 {
   min-width: 30rem;
+  max-width: 300px;
 }
 
 /* imagenes */
@@ -285,11 +313,15 @@ img.large {
 /* Card */
 
 .card {
-  border: 0.1rem #c0c0c0 solid;
+  border: 0.1rem #b1b1b1 solid;
   border-radius: 0.5rem;
   margin: 1.5rem;
   max-width: 260px;
   min-height: 400px;
+}
+
+.card.small {
+  min-height: 200px;
 }
 
 .enFila {
@@ -318,10 +350,16 @@ img.large {
   color: #0f3959;
 }
 
+
+
 .enFila.aside {
   justify-content: space-between;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.carrito-responsive{
+  display: flex;
 }
 
 .card-max {
@@ -676,9 +714,8 @@ form.prod-edit-screen {
   max-width: 150px;
 }
 
-.fa-caret-down{
+.fa-caret-down {
   margin-left: 0.3rem;
- 
 }
 
 .fa-search {
@@ -830,9 +867,75 @@ li > h1 {
   font-weight: bold;
 }
 
+/* redes sociales */
+.redes-container {
+  display: flex;
+}
+
+.redes__div {
+  background-color: rgb(163, 216, 216);
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  transition: all ease 0.5s;
+  overflow: hidden;
+  position: relative;
+  margin-left: 1rem;
+}
+
+.redes_input {
+  border: none;
+  background: none;
+  outline: none;
+  color: black;
+  font-size: 14px;
+  width: 0px;
+  transition: all ease 0.5s;
+  padding: 4px;
+  margin-top: 7px;
+}
+
+.redes__div:hover > .redes_input {
+  width: 140px;
+
+  margin-right: -10px;
+  border: none;
+  padding-left: 10px;
+}
+
+.redes__div:hover {
+  width: 180px;
+  background-color: aqua;
+}
+
+.rs-icon {
+  position: absolute;
+  cursor: pointer;
+  margin-top: 7px;
+  margin-right: 7px;
+}
+
+#wassap2 {
+  border-radius: 5px;
+}
+
+.redes__div > ::placeholder {
+  color: rgb(44, 43, 43);
+  font-weight: bold;
+  text-align: center;
+}
+
 /* media query */
 
 @media (max-width: 768px) {
+  .col-1.top {
+    margin-top: 0;
+  }
+
+  .min-30 {
+    min-width: 20rem;
+  }
+
   .header-menu > a > i {
     font-size: 25px;
   }
@@ -891,62 +994,40 @@ li > h1 {
     margin-left: 0;
     width: 100%;
   }
-}
 
-/* redes sociales */
-.redes-container {
+/*carrito*/
+.carrito-responsive{
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 200px;
+  min-height: 120px;
+  justify-content: space-between;
 }
 
-.redes__div {
-  background-color: rgb(163, 216, 216);
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
-  transition: all ease 0.5s;
-  overflow: hidden;
-  position: relative;
-  margin-left: 1rem;
+.card.carrito{
+max-width: 100%;
 }
 
-.redes_input {
-  border: none;
-  background: none;
-  outline: none;
-  color: black;
-  font-size: 14px;
-  width: 0px;
-  transition: all ease 0.5s;
-  padding: 4px;
-  margin-top: 7px;
+.row.carrito{ 
+  justify-content: space-around;
 }
 
-.redes__div:hover > .redes_input {
-  width: 140px;
-
-  margin-right: -10px;
-  border: none;
-  padding-left: 10px;
+.card.small{
+  max-width: 100%;
 }
 
-.redes__div:hover {
-  width: 180px;
-  background-color: aqua;
-}
-
-.rs-icon {
-  position: absolute;
-  cursor: pointer;
-  margin-top: 7px;
-  margin-right: 7px;
-}
-
-#wassap2 {
-  border-radius: 5px;
-}
-
-.redes__div > ::placeholder {
-  color: rgb(44, 43, 43);
-  font-weight: bold;
+.col-2 > h1{
   text-align: center;
 }
+
+.item-responsive{
+  max-width: 200px;
+}
+
+
+
+}
+
+/*FINDE MEDIA QUERIES*/
+
