@@ -932,8 +932,13 @@ li > h1 {
 @media (max-width: 768px) {
   .col-1.top {
     margin-top: 0;
-    padding: 0rem 1rem 0rem 3rem;
+   
   }
+
+.col-1 > ul{
+  margin-left: 15px;
+}
+
 
   .min-30 {
     min-width: 20rem;
