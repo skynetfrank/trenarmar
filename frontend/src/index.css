@@ -271,6 +271,7 @@ header a:hover {
 
 .col-1.imagen {
   flex: 1 1 20rem;
+  text-align: center;
 }
 
 .col-2 {
@@ -931,6 +932,7 @@ li > h1 {
 @media (max-width: 768px) {
   .col-1.top {
     margin-top: 0;
+    padding: 0rem 1rem 0rem 3rem;
   }
 
   .min-30 {
