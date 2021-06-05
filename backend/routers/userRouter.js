@@ -40,13 +40,23 @@ userRouter.post('/signin', expressAsyncHandler(async (req, res) => {
 userRouter.post('/register', expressAsyncHandler(async (req, res) => {
   const user = new User({
     name: req.body.name,
-    email: req.body.email,
     apellido: req.body.apellido,
     cedula: req.body.cedula,
     codigo: req.body.codigo,
+    email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8),
   });
-  console.log("User:",user);
+
+  console.log("req.body.name", req.body);
+  console.log("req.body.apellido", req.body.apellido);
+  console.log("req.body.cedula,", req.body.cedula,);
+  console.log("req.body.codigo", req.body.codigo);
+  console.log("req.body.email", req.body.email);
+  console.log("req.body.password", req.body.password);
+
+
+  console.log("User:", user);
+  console.log("password:", req.body.password);
   const createdUser = await user.save();
   res.send({
     _id: createdUser._id,

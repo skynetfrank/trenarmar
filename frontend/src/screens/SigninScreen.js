@@ -21,8 +21,10 @@ export default function SigninScreen(props) {
 
   useEffect(() => {
     if (userInfo) {
+      console.log("hay userInfo redirect to ==>: ", redirect);
       props.history.push(redirect);
     }
+    console.log("NO hay userInfo redirect to ==>: ", redirect);
   }, [props.history, redirect, userInfo]);
 
   return (

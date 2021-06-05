@@ -36,6 +36,7 @@ appconfigRouter.put('/update', isAuth, isAdmin, expressAsyncHandler(async (req, 
 
 appconfigRouter.get('/seed', expressAsyncHandler(async (req, res) => {
   //await config.remove({});
+  console.log("error de configuracion");
   const createdConfig = await Config.create(data.config);
   res.send({ createdConfig });
 })

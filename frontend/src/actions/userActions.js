@@ -10,14 +10,14 @@ import {
   from "../constants/userConstants";
 
 
-export const register = (name, email, password,apellido,cedula,codigo) => async (dispatch) => {
+export const register = (name, apellido, cedula, codigo, email, password) => async (dispatch) => {
   dispatch({
     type: USER_REGISTER_REQUEST,
     payload: email, password,
   });
 
   try {
-    const { data } = await axios.post('/api/users/register', { name, email, password,apellido,cedula,codigo });
+    const { data } = await axios.post('/api/users/register', { name, apellido, cedula, codigo, email, password });
     dispatch({
       type: USER_REGISTER_SUCCESS,
       payload: data

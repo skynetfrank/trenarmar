@@ -40,10 +40,10 @@ function App() {
         window.open('https://twitter.com/dolartoday', '_blank');
         break
       case "facebook":
-        window.open('https://www.facebook.com/DolarToday/', '_blank');
+        window.open('https://www.facebook.com/trenarmar2014/', '_blank');
         break
       case "instagram":
-        window.open('https://www.instagram.com/enparalelovzla', '_blank');
+        window.open('https://www.instagram.com/trenarmar2014/', '_blank');
         break
       default:
         console.log("default break!!");
@@ -55,7 +55,8 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="row">
-          <div>
+          <div className="div-brand">
+            <img src="images/logo2.png" alt="logo" id="logo" />
             <Link className="brand" to="/">TRENARMAR 2014</Link>
           </div>
           <div className="header-menu">
@@ -84,7 +85,7 @@ function App() {
             {userInfo && userInfo.isAdmin && (
               <Link to="/dashboard"><i className="fa fa-cogs"></i><span className="span-hide"> Admin</span></Link>
             )}
-            <Link to="/Contacto"><i className="fa fa-envelope"></i> <span className="contacto-hide">Contacto</span></Link>
+           
           </div>
         </header>
         <main>
@@ -115,28 +116,24 @@ function App() {
         <footer className="row center">
           <div className="redes-container">
             <div className="redes__div">
-              <input className="redes_input" type="text" name="" placeholder="@amazonia-tienda" readOnly></input>
+              <input className="redes_input" type="text" name="" placeholder="@trenarmar2014" readOnly></input>
               <img className="rs-icon" onClick={(e) => gotoRedes(e)} id="instagram" src="/info/instagram.png" alt=""></img>
             </div>
             <div className="redes__div">
-              <input className="redes_input" type="text" name="" placeholder="+58 0414-555-99-99" readOnly></input>
+              <input className="redes_input" type="text" name="" placeholder="+58 424-1608030" readOnly></input>
               <span className="rs-icon"><img id="wassap2" src="/info/wassap.png" alt=""></img></span>
             </div>
             <div className="redes__div">
-              <input className="redes_input" type="text" placeholder="@skynetFrank" readOnly></input>
-              <span className="rs-icon"><img onClick={(e) => gotoRedes(e)} id="twitter" src="/info/twiter.png" alt=""></img></span>
-            </div>
-            <div className="redes__div">
-              <input className="redes_input" type="text" name="" placeholder="amazonia.facebook.com" readOnly></input>
+              <input className="redes_input" type="text" name="" placeholder="trenarmar2014" readOnly></input>
               <span className="rs-icon"><img onClick={(e) => gotoRedes(e)} id="facebook" src="/info/facebook.png" alt=""></img></span>
             </div>
             <div className="redes__div">
-              <input className="redes_input" type="text" name="" placeholder="@amazonia-tk" readOnly></input>
-              <span className="rs-icon"><img src="/info/tiktok.png" alt=""></img></span>
+              <input className="redes_input" type="text" name="" placeholder="+58 0424-1608030" readOnly></input>
+              <span className="rs-icon"><img id="twiter" src="/info/phone.png" alt=""></img></span>
             </div>
             <div className="redes__div">
-              <input className="redes_input" type="text" name="" placeholder="+58 0414-555-55-55" readOnly></input>
-              <span className="rs-icon"><img id="twiter" src="/info/phone.png" alt=""></img></span>
+              <input className="redes_input" type="text" name="" placeholder="contactanos" readOnly></input>
+              <span className="rs-icon"><Link to="/Contacto"><img onClick={(e) => gotoRedes(e)} id="contactanos" src="/info/mail-icon.png" alt=""></img></Link></span>
             </div>
           </div>
 

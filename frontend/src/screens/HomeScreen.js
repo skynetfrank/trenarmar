@@ -30,7 +30,6 @@ function HomeScreen() {
         : (
           <>
             <div className="search-div">
-              <h1 className="left right">Nuestros Productos</h1>
               <input type="text"
                 value={busqueda}
                 className="search-input"

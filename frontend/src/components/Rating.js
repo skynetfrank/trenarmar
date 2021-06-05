@@ -56,7 +56,7 @@ function Rating(props) {
         </i>
       </span>
       <span>
-        {` ${numReviews} likes`}
+        {` ${''}`}
       </span>
     </div>
   )
