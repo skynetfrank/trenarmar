@@ -92,6 +92,7 @@ li {
 
 .li-divisorio{
   border-bottom: 2px solid #cccbcb;
+  padding-bottom:10px ;
 }
 
 input,
