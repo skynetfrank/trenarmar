@@ -71,6 +71,8 @@ export default function CartScreen(props) {
           </ul>)
         }
       </div>
+
+      
       <div className="col-1 responsive">
         <div className="card card-body small">
           <ul>

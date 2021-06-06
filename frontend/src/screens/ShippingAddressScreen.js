@@ -28,67 +28,76 @@ export default function ShippingAddressScreen(props) {
   }
 
   return (
-    <div>
-      <CheckoutSteps step1 step2></CheckoutSteps>
-      <form className="form" onSubmit={submitHandler}>
-        <div className="form-title">
-          <h1 className="grueso">Direccion de Envio</h1>
+    <>
+
+   
+      <div>
+        <CheckoutSteps step1 step2></CheckoutSteps>
+        <div className="div-clientes">
+          <select id="select-clientes" name="">
+          <option value="terquimca">Terquimca</option>
+            <option value="terquimca">Cliente2</option>
+          </select>
         </div>
-        <div>
-          <label htmlFor="fullName">Nombre Completo</label>
-          <input type="text"
-            id="fullName"
-            placeholder="Ingrese su nombre completo"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            required>
-          </input>
-        </div>
-        <div>
-          <label htmlFor="address">Direccion de Entrega</label>
-          <input type="text"
-            id="address"
-            placeholder="Ingrese su direccion"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            required>
-          </input>
-        </div>
-        <div>
-          <label htmlFor="city">Ciudad</label>
-          <input type="text"
-            id="city"
-            placeholder="Ingrese la ciudad"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            required>
-          </input>
-        </div>
-        <div>
-          <label htmlFor="postalCode">Codigo Postal</label>
-          <input type="text"
-            id="postalCode"
-            placeholder="Ingrese un codigo postal"
-            value={postalCode}
-            onChange={(e) => setPostalCode(e.target.value)}
-            required>
-          </input>
-        </div>
-        <div>
-          <label htmlFor="country">Pais</label>
-          <input type="text"
-            id="country"
-            placeholder="Ingrese el pais"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-            required>
-          </input>
-        </div>
-        <div>
-          <label />
-          <button className="primary" type="submit">Continuar...</button>
-        </div>
-      </form>
-    </div>
-  )
+        <form className="form" onSubmit={submitHandler}>
+          <div className="form-title">
+            <h1 className="grueso">Direccion de Envio</h1>
+          </div>
+          <div>
+            <label htmlFor="fullName">Nombre Completo</label>
+            <input type="text"
+              id="fullName"
+              placeholder="Ingrese su nombre completo"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required>
+            </input>
+          </div>
+          <div>
+            <label htmlFor="address">Direccion de Entrega</label>
+            <input type="text"
+              id="address"
+              placeholder="Ingrese su direccion"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              required>
+            </input>
+          </div>
+          <div>
+            <label htmlFor="city">Ciudad</label>
+            <input type="text"
+              id="city"
+              placeholder="Ingrese la ciudad"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required>
+            </input>
+          </div>
+          <div>
+            <label htmlFor="postalCode">Codigo Postal</label>
+            <input type="text"
+              id="postalCode"
+              placeholder="Ingrese un codigo postal"
+              value={postalCode}
+              onChange={(e) => setPostalCode(e.target.value)}
+              required>
+            </input>
+          </div>
+          <div>
+            <label htmlFor="country">Pais</label>
+            <input type="text"
+              id="country"
+              placeholder="Ingrese el pais"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              required>
+            </input>
+          </div>
+          <div>
+            <label />
+            <button className="primary" type="submit">Continuar...</button>
+          </div>
+        </form>
+      </div>
+    </>)
 }

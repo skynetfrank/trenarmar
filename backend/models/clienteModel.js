@@ -6,8 +6,6 @@ const clienteSchema = new mongoose.Schema({
   direccion: { type: String, required: true },
   condiciones: { type: String, required: true },
   saldo: { type: Number, required: true },
-  
-
 }, {
 
   timestamps: true

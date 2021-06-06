@@ -19,9 +19,9 @@ export default function PlaceOrderScreen(props) {
   //una pequeña funcion para formatear numeros a dos decimales
   const toPrice = (num) => Number(num.toFixed(2));
   cart.itemsPrice = toPrice(cart.cartItems.reduce((a, c) => a + c.qty * c.precio, 0));
-  cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
-  cart.taxPrice = toPrice(cart.itemsPrice * 0.15);
-  cart.totalPrice = toPrice(cart.itemsPrice + cart.shippingPrice + cart.taxPrice)
+  cart.shippingPrice = cart.itemsPrice > 0 ? toPrice(0) : toPrice(10);
+  cart.taxPrice = toPrice(cart.itemsPrice * 0);
+  cart.totalPrice = toPrice(cart.itemsPrice + cart.shippingPrice)
   const dispatch = useDispatch();
 
   const placeOrderHandler = () => {
@@ -46,24 +46,20 @@ export default function PlaceOrderScreen(props) {
           <ul>
             <li>
               <div className="card-max card-body">
-                <strong>Envio</strong>
+                <strong>Orde de Pedido</strong>
                 <p>
                   <strong>Nombre: </strong>{cart.shippingAddress.fullName} <br />
                   <strong>Direccion: </strong>{cart.shippingAddress.address},
                   {cart.shippingAddress.city},{cart.shippingAddress.postalCode},
                   {cart.shippingAddress.country}
                 </p>
-              </div>
-            </li>
-            <li>
-              <div className="card-max card-body">
-                <strong>Detalles del Pago</strong>
                 <p>
                   <strong>Metodo de Pago: </strong>{cart.paymentMethod}
                 </p>
 
               </div>
             </li>
+
             <li>
               <div className="card-max card-body">
                 <strong>Articulos de este Pedido</strong>
@@ -91,8 +87,11 @@ export default function PlaceOrderScreen(props) {
           </ul>
 
         </div>
+
+
+
         <div className="col-1">
-          <div className="card card-body">
+          <div className="card card-body small">
             <ul>
               <li>
                 <h1 className="grueso">Resumen</h1>
@@ -109,12 +108,7 @@ export default function PlaceOrderScreen(props) {
                   <div>${cart.shippingPrice.toFixed(2)}</div>
                 </div>
               </li>
-              <li>
-                <div className="row">
-                  <div>Impuestos</div>
-                  <div>${cart.taxPrice.toFixed(2)}</div>
-                </div>
-              </li>
+
               <li>
                 <div className="row">
                   <div><strong>Total Global</strong></div>
@@ -125,8 +119,7 @@ export default function PlaceOrderScreen(props) {
                 <button type="button"
                   className="primary block"
                   onClick={placeOrderHandler}
-                  disabled={cart.cartItems.length === 0}
-                >
+                  disabled={cart.cartItems.length === 0}>
                   Envia tu Orden de Compra!
               </button>
               </li>
@@ -135,6 +128,8 @@ export default function PlaceOrderScreen(props) {
             </ul>
           </div>
         </div>
+
+
       </div>
     </div>
   )
