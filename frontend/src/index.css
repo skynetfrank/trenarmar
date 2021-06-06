@@ -994,6 +994,8 @@ li > h1 {
 /* media query */
 
 @media (max-width: 760px) {
+
+
   .checkout-steps {
     display: none;
   }
@@ -1100,16 +1102,23 @@ li > h1 {
   }
 
   .card-max {
-    width: 360px;
+    max-width: 360px;
   }
 
   .enFila.w-500 {
     flex-direction: column;
+    max-width: 360px;
   }
 
   .checkout-steps {
     display: none;
   }
+
+.itemsporprecio{
+  margin-left: 130px;
+}
+
+
 }
 
 /*FINDE MEDIA QUERIES*/

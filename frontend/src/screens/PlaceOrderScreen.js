@@ -46,7 +46,7 @@ export default function PlaceOrderScreen(props) {
           <ul>
             <li>
               <div className="card-max card-body">
-                <strong>Orde de Pedido</strong>
+                <strong>Procesar Pedido</strong>
                 <p>
                   <strong>Nombre: </strong>{cart.shippingAddress.fullName} <br />
                   <strong>Direccion: </strong>{cart.shippingAddress.address},
@@ -74,7 +74,7 @@ export default function PlaceOrderScreen(props) {
                           <div className="min-30">
                             <Link to={`/product/${item.producto}`}>{item.nombre}</Link>
                           </div>
-                          <div>
+                          <div className="itemsporprecio">
                             {item.qty} x $ {(item.precio).toFixed(2)} = ${(item.qty * item.precio).toFixed(2)}
                           </div>
                         </div>
