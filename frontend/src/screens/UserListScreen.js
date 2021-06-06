@@ -33,7 +33,7 @@ export default function UserListScreen(props) {
     <div>
       <h1 className="left">Usuarios</h1>
       <div className="div-link">
-        <Link to="/dashboard">...volver al Dashboard</Link>
+        <Link to="/dashboard">...regresar</Link>
       </div>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}

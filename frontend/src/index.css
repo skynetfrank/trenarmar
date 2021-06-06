@@ -154,11 +154,9 @@ button.block {
   width: 100%;
 }
 
-button.half{
+button.half {
   width: 50%;
 }
-
-
 
 button.small {
   font-size: 1.2rem;
@@ -564,6 +562,7 @@ img.large {
 .table thead {
   background-color: rgb(223, 148, 10);
   font-size: 14px;
+  height: 30px;
 }
 
 .table button {
@@ -604,7 +603,7 @@ img.large {
 #orderListTable tbody tr td:nth-child(8),
 #orderListTable tbody tr td:nth-child(9),
 #orderListTable tbody tr td:nth-child(10) {
-  width: 80px;
+  width: 70px;
   text-align: center;
   font-size: 1.2rem;
   padding: 5px;
@@ -612,6 +611,21 @@ img.large {
 #orderListTable tbody tr td:nth-child(11) {
   text-align: left;
   width: 75px;
+}
+
+#orderListTable tbody tr td:nth-child(11) {
+  text-align: left;
+  width: 75px;
+}
+
+#orderListTable tbody tr td:nth-child(7),
+#orderListTable tbody tr td:nth-child(8),
+#orderListTable tbody tr td:nth-child(9) {
+  width: 60px;
+}
+
+#orderListTable tbody tr td:nth-child(10) {
+  font-size: 10px;
 }
 
 #orderHistoryTable tbody tr td:nth-child(9),
@@ -623,7 +637,7 @@ img.large {
 #orderHistoryTable tbody tr td:nth-child(3),
 #orderListTable tbody tr td:nth-child(4) {
   text-align: right;
-  width: 100px;
+  width: 80px;
   font-size: 1.2rem;
 }
 
@@ -703,7 +717,6 @@ form.prod-edit-screen {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
 }
 
 .search-div > h1 {
@@ -792,7 +805,7 @@ strong {
   color: whitesmoke;
   background-color: black;
   border-top: 1px solid gray;
-  width: 190px;
+  width: 200px;
   height: 100%;
   position: sticky;
 }
@@ -802,6 +815,11 @@ strong {
   color: #20a020;
   font-size: 2.5rem;
   font-weight: 800;
+}
+
+.sidebar__header > p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 hr {
@@ -956,16 +974,26 @@ li > h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #b9b5b5;
+  padding-bottom: 5px;
 }
 
-.btn-confirmar-pago{
-
+.btn-confirmar-pago {
   text-align: center;
+}
+
+.tabla-pedidos-titulo > .enFila {
+  margin-top: 0;
+  height: 40px;
+}
+
+.tabla-pedidos-titulo > .enFila > h1 {
+  margin: 5px;
 }
 
 /* media query */
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .checkout-steps {
     display: none;
   }
@@ -1077,7 +1105,11 @@ li > h1 {
 
   .enFila.w-500 {
     flex-direction: column;
-  } 
+  }
+
+  .checkout-steps {
+    display: none;
+  }
 }
 
 /*FINDE MEDIA QUERIES*/

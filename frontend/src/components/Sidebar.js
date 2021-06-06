@@ -12,13 +12,13 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebar__header">
-                <p>Dashboard</p>
+                <p>Administrador</p>
                 <hr />
             </div>
             <div className="sidebar__menu">
                 <Link to="/"><HomeIcon />Inicio</Link>
+                <Link to="/orderlist"><DescriptionIcon />Pedidos</Link>
                 <Link to="/productlist"> <RedeemIcon />Productos</Link>
-                <Link to="/orderlist"><DescriptionIcon />Ordenes</Link>
                 <Link to="/userlist"><PeopleIcon />Usuarios</Link>
                 <Link to="statitics"><SettingsIcon />Estadisticas</Link>
                 <hr />

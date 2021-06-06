@@ -10,8 +10,17 @@ const appconfigRouter = express.Router();
 
 //build crud-api for config list,delete,update
 appconfigRouter.get('/', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
+  console.log("config router is working");
   const configuracion = await Config.findOne();
   res.send(configuracion);
+})
+);
+
+appconfigRouter.get('/seed', expressAsyncHandler(async (req, res) => {
+  //await config.remove({});
+  console.log("SEED DISPARADA: error de configuracion");
+  const createdConfig = await Config.create(data.config);
+  res.send({ createdConfig });
 })
 );
 
@@ -34,13 +43,7 @@ appconfigRouter.put('/update', isAuth, isAdmin, expressAsyncHandler(async (req, 
 })
 );
 
-appconfigRouter.get('/seed', expressAsyncHandler(async (req, res) => {
-  //await config.remove({});
-  console.log("error de configuracion");
-  const createdConfig = await Config.create(data.config);
-  res.send({ createdConfig });
-})
-);
+
 
 
 

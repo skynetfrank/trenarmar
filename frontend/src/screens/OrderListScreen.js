@@ -54,10 +54,10 @@ export default function OrderListScreen(props) {
   }
 
   return (
-    <div>
+    <div className="tabla-pedidos-titulo">
       <div className="enFila aside">
-        <h2>Ordenes de Compra - Administrador: {userInfo?.name} </h2>
-        <h2>{userInfo.email}</h2>
+        <h1>Pedidos</h1>
+        <h2>admin:{userInfo.email}</h2>
       </div>
       <div className="search-div">
         <input type="text"
@@ -74,7 +74,7 @@ export default function OrderListScreen(props) {
         </span>
       </div>
       <div className="div-link">
-        <Link to="/dashboard">...volver al Dashboard</Link>
+        <Link to="/dashboard">...regresar</Link>
       </div>
 
       {loadingDelete && <LoadingBox></LoadingBox>}
@@ -86,16 +86,16 @@ export default function OrderListScreen(props) {
               <table className="table" id="orderListTable">
                 <thead>
                   <tr>
-                    <th>ID-Orden</th>
-                    <th>Usuario</th>
+                    <th>Pedido#</th>
+                    <th>Vendedor</th>
                     <th>Fecha</th>
-                    <th>Total Bs.</th>
-                    <th>Pagada?</th>
-                    <th>Entregada?</th>
-                    <th>Transferencia en Fecha</th>
+                    <th>Total $</th>
+                    <th>Pagado?</th>
+                    <th>Entregado?</th>
+                    <th>Pago</th>
                     <th>Banco</th>
-                    <th>Referencia</th>
-                    <th>Status Transferencia</th>
+                    <th>Ref</th>
+                    <th>Status Pago</th>
                     <th>accion</th>
                   </tr>
                 </thead>
